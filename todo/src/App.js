@@ -1,9 +1,13 @@
 import React from 'react';
 import './App.css';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
-    <h1>todo</h1>
+    <div>
+      <h1>todo</h1>
+      <TodoList />
+    </div>
   );
 }
 
