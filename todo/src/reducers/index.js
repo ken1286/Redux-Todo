@@ -21,9 +21,14 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
   switch(action.type) {
     case ADD_TODO:
-      return [
-        ...state
-      ]
+      return {
+        todos: [...state.todos,
+        {
+          text: action.text,
+          id: action.id,
+          completed: false
+        }]
+      };
     default:
       return state;
   }

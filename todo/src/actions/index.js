@@ -6,5 +6,5 @@ export const addTodo = todo => (
   {
     type: ADD_TODO,
     id: nextTodoId++,
-    todo
+    text: todo
   })
