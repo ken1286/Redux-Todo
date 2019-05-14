@@ -1,20 +1,7 @@
-import { ADD_TODO } from '../actions';
+import { ADD_TODO, TOGGLE_TODO } from '../actions';
 
 const initialState = {
-  todos: [
-    {
-      text: 'walk dog',
-      completed: false
-    },
-    {
-      text: 'feed dog',
-      completed: false
-    },
-    {
-      text: 'pet dog',
-      completed: false
-    }
-  ]
+  todos: []
 }
 
 
@@ -29,6 +16,15 @@ export const reducer = (state = initialState, action) => {
           completed: false
         }]
       };
+    case TOGGLE_TODO:
+      return { 
+        todos: state.todos.map( todo => {
+        if(todo.id === action.payload) {
+          todo.completed = !todo.completed;
+          return todo;
+        }
+        return todo;
+      }) }
     default:
       return state;
   }

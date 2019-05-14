@@ -17,12 +17,12 @@ class TodoForm extends React.Component {
      this.setState({ todoInput: ''})
    }
 
-  render() { 
+  render() {
     return (
       <form onSubmit={this.handleSubmit}>
       <input 
         placeholder="todo..." 
-        value={this.value}
+        value={this.todoInput}
         onChange={this.handleChanges}
       />
       <button type="submit" onClick={this.handleSubmit}>Add Todo</button>
